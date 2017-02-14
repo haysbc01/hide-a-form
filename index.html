@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="hideForm">
+  <head>
+    <meta charset="utf-8">
+    <title>Hide a Form</title>
+
+    <link rel="stylesheet" href="main.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.js"></script>
+
+    <script src="main.js"></script>
+  </head>
+
+  <body ng-controller="master as form">
+
+    <div class="header">
+      <h1>Social Media Site</h1>
+      <div class="navBar">
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#">bout</a></li>
+          <li><a href="#">social</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="leftSideBar">
+        <img src="http://lorempixel.com/output/people-h-c-100-150-4.jpg" alt="profile-picture">
+
+
+        <h5>Name: {{form.name}}</h2>
+        <h5>Bio: {{form.bio}}</h2>
+        <h5>Favorite Books: {{form.books}}</h2>
+        <h5>Favorite JS Libraries: {{form.js}}</h2>
+
+        <button ng-click="formInput =! formInput" type="button" name="button">Update Profile</button>
+
+      </div>
+      <div class="middleSection">
+
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <ul>
+        <li><a href="#">home</a></li>
+        <li><a href="#">bout</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </div>
+
+
+    <form class="form" ng-show="formInput">
+
+      <p>Name</p>
+      <input ng-model="form.name" type="text" name="name" value={{form.name}}>
+      <p>bio</p>
+      <textarea ng-model="form.bio" name="name" rows="8" cols="80">{{form.bio}}</textarea>
+      <p>Favorite Books</p>
+      <input ng-model="form.books" type="text" name="favorite-books" value={{form.books}}>
+      <p>Favorite JS Libraries</p>
+      <input ng-model="form.js" type="text" name="js-libraries" value={{form.js}}>
+      <button ng-click="formInput =! formInput" type="button" name="button">Submit</button>
+
+    </form>
+
+  </body>
+</html>
